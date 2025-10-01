@@ -44,3 +44,7 @@ Thumbs.db
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
 error.log
+
+#vite
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
