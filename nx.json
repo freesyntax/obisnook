@@ -17,26 +17,17 @@
     {
       "plugin": "@nx/js/typescript",
       "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
-        "build": {
-          "targetName": "build",
-          "configName": "tsconfig.lib.json",
-          "buildDepsName": "build-deps",
-          "watchDepsName": "watch-deps"
-        }
+        "typecheck": { "targetName": "typecheck" },
+        "build": { "targetName": "build", "configName": "tsconfig.lib.json", "buildDepsName": "build-deps", "watchDepsName": "watch-deps" }
       }
     },
     {
       "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
+      "options": { "targetName": "lint" }
     },
     {
       "plugin": "@nx/vite/plugin",
-      "options": {
+      "options": { 
         "buildTargetName": "build",
         "testTargetName": "test",
         "serveTargetName": "serve",
@@ -46,24 +37,14 @@
         "typecheckTargetName": "typecheck",
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps"
-      }
+      },
+      "projects": ["web"] 
     }
   ],
-  "generators": {
-    "@nx/react": {
-      "application": {
-        "babel": true,
-        "style": "tailwind",
-        "linter": "eslint",
-        "bundler": "vite"
-      },
-      "component": {
-        "style": "tailwind"
-      },
-      "library": {
-        "style": "tailwind",
-        "linter": "eslint"
-      }
-    }
+  "projects": {
+    "api": { "tags": [] },
+    "web": { "tags": [] },
+    "shared": { "tags": [] }
   }
 }
+

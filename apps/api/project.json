@@ -1,0 +1,28 @@
+{
+  "name": "api",
+  "root": "apps/api",
+  "sourceRoot": "apps/api",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker-compose -f ../obisnook-docker/docker-compose.yml up -d api couchdb",
+        "cwd": "."
+      }
+    },
+    "migrate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker-compose -f ../obisnook-docker/docker-compose.yml run --rm api php artisan migrate",
+        "cwd": "."
+      }
+    },
+    "logs": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker logs -f laravel",
+        "cwd": "."
+      }
+    }
+  }
+}
